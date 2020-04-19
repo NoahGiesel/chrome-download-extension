@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloader</title>
+</head>
+<style>
+    *{
+        border: none;
+        font-weight: bold;
+    }
+    input { 
+        background-color: antiquewhite;
+        padding: 5px 1px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        margin: 3px auto;
+        width: 100%;
+    }
+    button {
+        padding: 5px 5px;
+        border: 1px solid rgba(0, 0, 0, 0.1);  
+        margin: 3px auto;
+        width: 100%;
+    }
+    button:hover { 
+        cursor: pointer;
+        border: 1px solid rgba(0, 0, 0, 0.4);  
+    }
+    .warning {
+        color: red;
+        visibility: hidden; 
+    }
+</style>
+<body>
+    <input  class="URL-input"type="text" placeholder="Video URL...">
+    <button class="convert-button">Download</button>
+    <p class="warning">Error during Dowload of the video</p>
+    <script >
+        var convertBtn = document.querySelector('.convert-button');
+        var URLinput = document.querySelector('.URL-input');
+        convertBtn.addEventListener('click', () => {
+            console.log(`URL: ${URLinput.value}`);
+            sendURL(URLinput.value);
+        });
+        function sendURL(URL) {
+            window.location.href = `http://localhost:4000/download?URL=${URL}`;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
